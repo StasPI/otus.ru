@@ -1,0 +1,26 @@
+A:\git\my_studies\calculator\Calc\Calc\bin\Debug\netcoreapp3.1\Calc.exe
+A:\git\my_studies\calculator\Calc\Calc\bin\Debug\netcoreapp3.1\Calc.deps.json
+A:\git\my_studies\calculator\Calc\Calc\bin\Debug\netcoreapp3.1\Calc.runtimeconfig.json
+A:\git\my_studies\calculator\Calc\Calc\bin\Debug\netcoreapp3.1\Calc.runtimeconfig.dev.json
+A:\git\my_studies\calculator\Calc\Calc\bin\Debug\netcoreapp3.1\Calc.dll
+A:\git\my_studies\calculator\Calc\Calc\bin\Debug\netcoreapp3.1\Calc.pdb
+A:\git\my_studies\calculator\Calc\Calc\obj\Debug\netcoreapp3.1\Calc.csprojAssemblyReference.cache
+A:\git\my_studies\calculator\Calc\Calc\obj\Debug\netcoreapp3.1\Calc.AssemblyInfoInputs.cache
+A:\git\my_studies\calculator\Calc\Calc\obj\Debug\netcoreapp3.1\Calc.AssemblyInfo.cs
+A:\git\my_studies\calculator\Calc\Calc\obj\Debug\netcoreapp3.1\Calc.csproj.CoreCompileInputs.cache
+A:\git\my_studies\calculator\Calc\Calc\obj\Debug\netcoreapp3.1\Calc.dll
+A:\git\my_studies\calculator\Calc\Calc\obj\Debug\netcoreapp3.1\Calc.pdb
+A:\git\my_studies\calculator\Calc\Calc\obj\Debug\netcoreapp3.1\Calc.genruntimeconfig.cache
+A:\git\otus.ru\С# для начинающих программистов\Calc\Calc\bin\Debug\netcoreapp3.1\Calc.exe
+A:\git\otus.ru\С# для начинающих программистов\Calc\Calc\bin\Debug\netcoreapp3.1\Calc.deps.json
+A:\git\otus.ru\С# для начинающих программистов\Calc\Calc\bin\Debug\netcoreapp3.1\Calc.runtimeconfig.json
+A:\git\otus.ru\С# для начинающих программистов\Calc\Calc\bin\Debug\netcoreapp3.1\Calc.runtimeconfig.dev.json
+A:\git\otus.ru\С# для начинающих программистов\Calc\Calc\bin\Debug\netcoreapp3.1\Calc.dll
+A:\git\otus.ru\С# для начинающих программистов\Calc\Calc\bin\Debug\netcoreapp3.1\Calc.pdb
+A:\git\otus.ru\С# для начинающих программистов\Calc\Calc\obj\Debug\netcoreapp3.1\Calc.csprojAssemblyReference.cache
+A:\git\otus.ru\С# для начинающих программистов\Calc\Calc\obj\Debug\netcoreapp3.1\Calc.AssemblyInfoInputs.cache
+A:\git\otus.ru\С# для начинающих программистов\Calc\Calc\obj\Debug\netcoreapp3.1\Calc.AssemblyInfo.cs
+A:\git\otus.ru\С# для начинающих программистов\Calc\Calc\obj\Debug\netcoreapp3.1\Calc.csproj.CoreCompileInputs.cache
+A:\git\otus.ru\С# для начинающих программистов\Calc\Calc\obj\Debug\netcoreapp3.1\Calc.dll
+A:\git\otus.ru\С# для начинающих программистов\Calc\Calc\obj\Debug\netcoreapp3.1\Calc.pdb
+A:\git\otus.ru\С# для начинающих программистов\Calc\Calc\obj\Debug\netcoreapp3.1\Calc.genruntimeconfig.cache
