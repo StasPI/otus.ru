@@ -111,13 +111,9 @@ namespace CalcWPF
         {
             txtValue.Text = DropLastChar(txtValue.Text);
             if (op == "")
-            {
                 num1 = double.Parse(txtValue.Text);
-            }
             else
-            {
                 num2 = double.Parse(txtValue.Text);
-            }
         }
 
         private string DropLastChar(string text)
