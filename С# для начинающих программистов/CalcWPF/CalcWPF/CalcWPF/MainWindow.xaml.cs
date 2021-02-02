@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CalcWPF
 {
@@ -20,8 +10,8 @@ namespace CalcWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        int num1 = 0;
-        int num2 = 0;
+        double num1 = 0;
+        double num2 = 0;
         string op = "";
         public MainWindow()
         {
@@ -32,18 +22,16 @@ namespace CalcWPF
         private void btn_num_Click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
-            string str = button.Content.ToString();
-            int num = Int32.Parse(str);
-            if (op == "")
-            {
-                num1 = num1 * 10 + num;
-                txtValue.Text = num1.ToString();
-            }
+            string num = button.Content.ToString();
+            if (txtValue.Text == "0")
+                txtValue.Text = num;
             else
-            {
-                num2 = num2 * 10 + num;
-                txtValue.Text = num2.ToString();
-            }
+                txtValue.Text += num;
+
+            if (op == "")
+                num1 = Double.Parse(txtValue.Text);
+            else
+                num2 = Double.Parse(txtValue.Text);
         }
 
         ////Operations
@@ -51,11 +39,12 @@ namespace CalcWPF
         {
             Button button = (Button)sender;
             op = button.Content.ToString();
+            txtValue.Text = "0";
         }
 
         private void btn_eq_Click(object sender, RoutedEventArgs e)
         {
-            int result = 0;
+            double result = 0;
             switch (op)
             {
                 case "+":
@@ -87,7 +76,7 @@ namespace CalcWPF
                     ZeroParam();
                     break;
                 case "x^y":
-                    result = Pow(num1, num2);
+                    result = Pow(num1,(int) num2);
                     ZeroParam();
                     break;
             }
@@ -95,7 +84,7 @@ namespace CalcWPF
             num1 = result;
         }
 
-        private int Pow(int x, int y)
+        private double Pow(double x, int y)
         {
             if (y == 0)
                 return 1;
@@ -120,16 +109,28 @@ namespace CalcWPF
 
         private void btn_backspce_Click(object sender, RoutedEventArgs e)
         {
+            txtValue.Text = DropLastChar(txtValue.Text);
             if (op == "")
             {
-                num1 = num1 / 10;
-                txtValue.Text = num1.ToString();
+                num1 = double.Parse(txtValue.Text);
             }
             else
             {
-                num2 = num2 / 10;
-                txtValue.Text = num2.ToString();
+                num2 = double.Parse(txtValue.Text);
             }
+        }
+
+        private string DropLastChar(string text)
+        {
+            if (text.Length == 1)
+                text = "0";
+            else
+            {
+                text = text.Remove(text.Length -1, 1);
+                if (text[text.Length - 1] == '.')
+                    text = text.Remove(text.Length - 1, 1);
+            }
+            return text;
         }
 
         private void btn_plusminus_Click(object sender, RoutedEventArgs e)
@@ -151,6 +152,21 @@ namespace CalcWPF
             num1 = 0;
             num2 = 0;
             op = "";
+        }
+
+        private void btn_dot_Click(object sender, RoutedEventArgs e)
+        {
+            if (op == "")
+                SetDot(num1);
+            else
+                SetDot(num2);
+        }
+
+        private void SetDot(double num)
+        {
+            if (!txtValue.Text.Contains('.'))
+                txtValue.Text += ".";
+            return;
         }
     }
 }
