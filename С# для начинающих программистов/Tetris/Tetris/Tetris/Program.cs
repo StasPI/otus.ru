@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 
 namespace Tetris
@@ -10,46 +11,43 @@ namespace Tetris
             Console.SetWindowSize(40, 30);
             Console.SetBufferSize(40, 30);
 
-            char z = '*';
+            FigureGenerator generator = new FigureGenerator(20, 0, '*');
+            Figure currentFigure = generator.GetNewFigure();
 
-            Figure s = new Stick(20, 5, z);
-            s.Draw();
-
-            Thread.Sleep(500);
-            s.Hide();
-            s.Rotate();
-            s.Draw();
-
-            Thread.Sleep(500);
-            s.Hide();
-            s.Rotate();
-            s.Draw();
-
-            Thread.Sleep(500);
-            s.Hide();
-            s.Rotate();
-            s.Draw();
-
-            Thread.Sleep(500);
-            s.Hide();
-            s.Rotate();
-            s.Draw();
-
-
-            //s.Move(Direction.LEFT);
-
-
-            //Figure[] f = new Figure[2];
-            //f[0] = new Square(2, 5, z);
-            //f[1] = new Stick(6, 6, z);
-
-            //foreach (Figure fig in f)
-            //{
-            //    fig.Draw();
-            //}
+            while (true)
+            {
+                if(Console.KeyAvailable)
+                {
+                    var key = Console.ReadKey();
+                    HandleKey(currentFigure, key);
+                }
+                Thread.Sleep(500);
+                currentFigure.Move(Direction.DOWN);
+            }
 
             Console.ReadLine();
         }
+
+        private static void HandleKey(Figure currentFigure, ConsoleKeyInfo key)
+        {
+            switch (key.Key)
+            {
+                case ConsoleKey.LeftArrow:
+                    currentFigure.Move(Direction.LEFT);
+                    break;
+                case ConsoleKey.RightArrow:
+                    currentFigure.Move(Direction.RIGHT);
+                    break;
+                case ConsoleKey.DownArrow:
+                    currentFigure.Move(Direction.DOWN);
+                    break;
+            }
+        }
+
+        //void Func1(int a, int b) { return 1; }
+        //void Func2(int a, int b) { }
+        //int Func3(int a, int b) { }
+        //int Func4(int a, int b) { return 1 }
 
     }
 }
