@@ -1,41 +1,80 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Linq;
 
 namespace Tetris
 {
-    abstract class Figure
-    {
+   abstract class Figure
+   {
+      const int LENGHT = 4;
+      protected Point[] points = new Point[LENGHT];
+      private object p;
 
-        protected Point[] points = new Point[4];
-        private object p;
+      public void Draw()
+      {
+         foreach (Point p in points)
+         {
+            p.Draw();
+         }
+      }
 
-        public void Draw()
-        {
-            foreach (Point p in points)
-            {
-                p.Draw();
-            }
-        }
+      internal void TryMove(Direction dir)
+      {
+         Hide();
+         var clone = Clone();
+         Move(clone, dir);
+         if (VerifyPosition(clone))
+            points = clone;
 
-        public void Move(Direction dir)
-        {
-            Hide();
-            foreach (Point p in points)
-            {
-                p.Move(dir);
-            }
-            Draw();
-        }
+         Draw();
+      }
 
-        public void Hide()
-        {
-            foreach (Point p in points)
-            {
-                p.Hide();
-            }
-        }
+      internal void TryRotate()
+      {
+         Hide();
+         var clone = Clone();
+         Rotate(clone);
+         if (VerifyPosition(clone))
+            points = clone;
 
-        public abstract void Rotate();
-    }
+         Draw();
+      }
+
+      private bool VerifyPosition(Point[] pList)
+      {
+         foreach (var p in pList)
+         {
+            if (p.X < 0 || p.Y < 0 || p.X >= Field.Width || p.Y >= Field.Height)
+               return false;
+         }
+
+         return true;
+      }
+
+      private Point[] Clone()
+      {
+         var newPoints = new Point[LENGHT];
+         foreach (int i in Enumerable.Range(0, LENGHT))
+         {
+            newPoints[i] = new Point(points[i]);
+         }
+         return newPoints;
+      }
+
+      public void Move(Point[] pList, Direction dir)
+      {
+         foreach (var p in pList)
+         {
+            p.Move(dir);
+         }
+      }
+
+      public void Hide()
+      {
+         foreach (Point p in points)
+         {
+            p.Hide();
+         }
+      }
+
+      public abstract void Rotate(Point[] pList);
+   }
 }

@@ -1,53 +1,49 @@
 ﻿using System;
-using System.Linq;
 using System.Threading;
 
 namespace Tetris
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.SetWindowSize(40, 30);
-            Console.SetBufferSize(40, 30);
+   class Program
+   {
+      static void Main(string[] args)
+      {
+         Console.SetWindowSize(Field.Width, Field.Height);
+         Console.SetBufferSize(Field.Width, Field.Height);
 
-            FigureGenerator generator = new FigureGenerator(20, 0, '*');
-            Figure currentFigure = generator.GetNewFigure();
+         FigureGenerator generator = new FigureGenerator(20, 0, '*');
+         Figure currentFigure = generator.GetNewFigure();
 
-            while (true)
+         while (true)
+         {
+            if (Console.KeyAvailable)
             {
-                if(Console.KeyAvailable)
-                {
-                    var key = Console.ReadKey();
-                    HandleKey(currentFigure, key);
-                }
-                Thread.Sleep(500);
-                currentFigure.Move(Direction.DOWN);
+               var key = Console.ReadKey();
+               HandleKey(currentFigure, key);
             }
+            Thread.Sleep(100);
+            //currentFigure.TryMove(Direction.DOWN);
+         }
 
-            Console.ReadLine();
-        }
+         Console.ReadLine();
+      }
 
-        private static void HandleKey(Figure currentFigure, ConsoleKeyInfo key)
-        {
-            switch (key.Key)
-            {
-                case ConsoleKey.LeftArrow:
-                    currentFigure.Move(Direction.LEFT);
-                    break;
-                case ConsoleKey.RightArrow:
-                    currentFigure.Move(Direction.RIGHT);
-                    break;
-                case ConsoleKey.DownArrow:
-                    currentFigure.Move(Direction.DOWN);
-                    break;
-            }
-        }
-
-        //void Func1(int a, int b) { return 1; }
-        //void Func2(int a, int b) { }
-        //int Func3(int a, int b) { }
-        //int Func4(int a, int b) { return 1 }
-
-    }
+      private static void HandleKey(Figure currentFigure, ConsoleKeyInfo key)
+      {
+         switch (key.Key)
+         {
+            case ConsoleKey.LeftArrow:
+               currentFigure.TryMove(Direction.LEFT);
+               break;
+            case ConsoleKey.RightArrow:
+               currentFigure.TryMove(Direction.RIGHT);
+               break;
+            case ConsoleKey.DownArrow:
+               currentFigure.TryMove(Direction.DOWN);
+               break;
+            case ConsoleKey.Spacebar:
+               currentFigure.TryRotate();
+               break;
+         }
+      }
+   }
 }

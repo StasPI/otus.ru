@@ -10,11 +10,11 @@
         "projectUniqueName": "A:\\git\\otus.ru\\С# для начинающих программистов\\Tetris\\Tetris\\Tetris\\Tetris.csproj",
         "projectName": "Tetris",
         "projectPath": "A:\\git\\otus.ru\\С# для начинающих программистов\\Tetris\\Tetris\\Tetris\\Tetris.csproj",
-        "packagesPath": "C:\\Users\\algorithm\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Alons\\.nuget\\packages\\",
         "outputPath": "A:\\git\\otus.ru\\С# для начинающих программистов\\Tetris\\Tetris\\Tetris\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\algorithm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alons\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

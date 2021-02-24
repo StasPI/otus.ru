@@ -1,53 +1,59 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Tetris
 {
-    public class Point
-    {
-        public int x;
-        public int y;
-        public char c;
+   public class Point
+   {
+      public int X { get; set; }
+      public int Y { get; set; }
+      public char C { get; set; }
 
-        public void Draw()
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(c);
-        }
+      public void Draw()
+      {
+         Console.SetCursorPosition(X, Y);
+         Console.Write(C);
+         Console.SetCursorPosition(0, 0);
+      }
 
-        public Point(int a, int b, char sym)
-        {
-            x = a;
-            y = b;
-            c = sym;
-        }
+      public Point(Point p)
+      {
+         X = p.X;
+         Y = p.Y;
+         C = p.C;
+      }
 
-        internal void Move(Direction dir)
-        {
-            switch (dir)
-            {
-                case Direction.DOWN:
-                    y += 1;
-                    break;
-                case Direction.LEFT:
-                    x -= 1;
-                    break;
-                case Direction.RIGHT:
-                    x += 1;
-                    break;
-            }
-        }
+      public Point(int a, int b, char sym)
+      {
+         X = a;
+         Y = b;
+         C = sym;
+      }
 
-        internal void Rotate()
-        {
-            
-        }
+      internal void Move(Direction dir)
+      {
+         switch (dir)
+         {
+            case Direction.DOWN:
+               Y += 1;
+               break;
+            case Direction.LEFT:
+               X -= 1;
+               break;
+            case Direction.RIGHT:
+               X += 1;
+               break;
+         }
+      }
 
-        internal void Hide()
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(" ");
-        }
-    }
+      internal void Rotate()
+      {
+
+      }
+
+      internal void Hide()
+      {
+         Console.SetCursorPosition(X, Y);
+         Console.Write(" ");
+      }
+   }
 }
