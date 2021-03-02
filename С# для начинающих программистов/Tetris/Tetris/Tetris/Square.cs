@@ -4,16 +4,16 @@
    {
       public Square(int x, int y, char sym)
       {
-         points[0] = new Point(x, y, sym);
-         points[1] = new Point(x + 1, y, sym);
-         points[2] = new Point(x, y + 1, sym);
-         points[3] = new Point(x + 1, y + 1, sym);
+         Points[0] = new Point(x, y, sym);
+         Points[1] = new Point(x + 1, y, sym);
+         Points[2] = new Point(x, y + 1, sym);
+         Points[3] = new Point(x + 1, y + 1, sym);
          Draw();
       }
 
       public override void Rotate(Point[] pList)
       {
-         if (points[0].X == points[1].X)
+         if (Points[0].X == Points[1].X)
          {
             RotateHorisontal();
          }
@@ -25,19 +25,19 @@
 
       private void RotateVertical()
       {
-         for (int i = 0; i < points.Length; i++)
+         for (int i = 0; i < Points.Length; i++)
          {
-            points[i].X = points[0].X;
-            points[i].Y = points[0].Y + i;
+            Points[i].X = Points[0].X;
+            Points[i].Y = Points[0].Y + i;
          }
       }
 
       private void RotateHorisontal()
       {
-         for (int i = 0; i < points.Length; i++)
+         for (int i = 0; i < Points.Length; i++)
          {
-            points[i].Y = points[0].Y;
-            points[i].X = points[0].X + i;
+            Points[i].Y = Points[0].Y;
+            Points[i].X = Points[0].X + i;
          }
       }
    }

@@ -2,6 +2,6 @@
 {
    enum TypesOfFigures
    {
-      Stick = 0, Squere = 1
+      STICK = 0, SQUERE = 1
    }
 }
