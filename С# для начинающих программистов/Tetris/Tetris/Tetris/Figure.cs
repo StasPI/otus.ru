@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace Tetris
 {
@@ -56,6 +57,11 @@ namespace Tetris
                return Result.HEAP_STRIKE;
          }
          return Result.SUCCESS;
+      }
+
+      internal bool IsOnTop()
+      {
+         return Points[0].Y == 0;
       }
 
       private Point[] Clone()
