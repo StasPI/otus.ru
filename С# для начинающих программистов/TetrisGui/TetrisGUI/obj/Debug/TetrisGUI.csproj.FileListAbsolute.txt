@@ -8,3 +8,7 @@ A:\git\otus.ru\С# для начинающих программистов\Tetris
 A:\git\otus.ru\С# для начинающих программистов\Tetris\TetrisGUI\TetrisGUI\bin\Debug\SmallBasicLibrary.dll
 A:\git\otus.ru\С# для начинающих программистов\Tetris\TetrisGUI\TetrisGUI\bin\Debug\SmallBasicLibrary.xml
 A:\git\otus.ru\С# для начинающих программистов\Tetris\TetrisGUI\TetrisGUI\obj\Debug\TetrisGUI.csproj.CopyComplete
+A:\git\otus.ru\С# для начинающих программистов\TetrisGui\TetrisGUI\obj\Debug\TetrisGUI.csprojAssemblyReference.cache
+A:\git\otus.ru\С# для начинающих программистов\TetrisGui\TetrisGUI\obj\Debug\TetrisGUI.csproj.CoreCompileInputs.cache
+A:\git\otus.ru\С# для начинающих программистов\TetrisGui\TetrisGUI\obj\Debug\TetrisGUI.exe
+A:\git\otus.ru\С# для начинающих программистов\TetrisGui\TetrisGUI\obj\Debug\TetrisGUI.pdb
