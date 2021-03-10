@@ -35,7 +35,7 @@ namespace TetrisSb
       {
          GraphicsWindow.BrushColor = "Red";
          GraphicsWindow.FontSize = 20;
-         GraphicsWindow.DrawText((Field.Width / 2 - 4) * SIZE, (Field.Height / 2) * SIZE, "GAME OVER");
+         GraphicsWindow.DrawText((Field.Width / 2 - 4) * SIZE, (Field.Height / 2) * SIZE, "G A M E   O V E R");
       }
    }
 }
