@@ -11,7 +11,7 @@
          Draw();
       }
 
-      public override void Rotate(Point[] pList)
+      public override void Rotate()
       {
          if (Points[0].X == Points[1].X)
          {
