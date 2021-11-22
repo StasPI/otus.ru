@@ -1,4 +1,5 @@
 ﻿using Abstraction;
+using Microsoft.Extensions.Configuration;
 
 namespace GuessTheNumber
 {
@@ -13,11 +14,11 @@ namespace GuessTheNumber
 
       private int _userNumber;
 
-      public Game(ISettings settings, IRandomNumber randomNumber, IDataConsole dataConsole)
+      public Game(IConfiguration settings, IRandomNumber randomNumber, IDataConsole dataConsole)
       {
-         _numberOfAttempts = settings.NumberOfAttempts;
-         _rangeStart = settings.RangeStart;
-         _rangeEnd = settings.RangeEnd;
+         _numberOfAttempts = settings.GetValue<int>("NumberOfAttempts");
+         _rangeStart = settings.GetValue<int>("RangeStart");
+         _rangeEnd = settings.GetValue<int>("RangeEnd");
 
          _dataConsole = dataConsole;
          _randomNumber = randomNumber;

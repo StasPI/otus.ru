@@ -1,24 +1,16 @@
-﻿using GuessTheNumber;
+﻿using Abstraction;
+using GuessTheNumber;
 using Implementation;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
-Settings settings = new Settings();
-DataConsoleGreen dataConsole = new DataConsoleGreen();
-RandomNumber randomNumber = new RandomNumber();
+var host = Host.CreateDefaultBuilder()
+   .ConfigureServices((context, services) =>
+   {
+      services.AddTransient<IDataConsole, DataConsoleGreen>();
+      services.AddTransient<IRandomNumber, RandomNumber>();
+   })
+   .Build();
 
-GetSettings(settings);
-
-Game game = new Game(settings, randomNumber, dataConsole);
-game.Execute();
-
-void GetSettings(Settings settings)
-{
-   IConfigurationBuilder builder = new ConfigurationBuilder()
-    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-
-   IConfigurationRoot configuration = builder.Build();
-   settings.NumberOfAttempts = int.Parse(configuration["NumberOfAttempts"]);
-   settings.RangeStart = int.Parse(configuration["RangeStart"]);
-   settings.RangeEnd = int.Parse(configuration["RangeEnd"]);
-}
+var service = ActivatorUtilities.CreateInstance<Game>(host.Services);
+service.Execute();
