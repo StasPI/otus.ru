@@ -8,7 +8,7 @@ namespace Implementation
 
       public int GetNumber(int rangeStart, int rangeEnd)
       {
-         int value = rnd.Next(1, 10);
+         int value = rnd.Next(rangeStart, rangeEnd);
          return value;
       }
    }

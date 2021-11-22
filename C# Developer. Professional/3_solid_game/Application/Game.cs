@@ -41,7 +41,7 @@ namespace GuessTheNumber
                }
                else if (attempt + 1 == _numberOfAttempts)
                {
-                  Fail();
+                  Fail(rNumber);
                   break;
                }
                else if (rNumber > _userNumber)
@@ -72,9 +72,9 @@ namespace GuessTheNumber
          _dataConsole.Write("Верно! Поздравляем!");
       }
 
-      private void Fail()
+      private void Fail(int rNumber)
       {
-         _dataConsole.Write("Попытки кончились, Вы не угадали!");
+         _dataConsole.Write($"Попытки кончились, Вы не угадали! Я загадывал число {rNumber}");
       }
 
       public void More()
